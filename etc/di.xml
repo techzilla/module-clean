@@ -9,7 +9,7 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="clean_attributes" xsi:type="object">Cyberpunkspike\Clean\Console\Command\Attributes</item>
+                <item name="clean_attribute_options" xsi:type="object">Cyberpunkspike\Clean\Console\Command\AttributeOptions</item>
             </argument>
         </arguments>
     </type>

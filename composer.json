@@ -1,5 +1,5 @@
 {
-    "name": "cyberpunkspike/module-cleanattributes",
+    "name": "cyberpunkspike/module-clean",
     "description": "Magento2 module to clean unused attribute values",
     "keywords": ["magento2","cache"],
     "type": "magento2-module",
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Cyberpunkspike\\CleanAttributes\\": ""
+            "Cyberpunkspike\\Clean\\": ""
         },
         "files": [
             "registration.php"

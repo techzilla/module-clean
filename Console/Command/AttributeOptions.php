@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Attributes extends Command
+class AttributeOptions extends Command
 {
 
     /**
@@ -25,12 +25,12 @@ class Attributes extends Command
             ->addArgument(
                 'attributes',
                 InputArgument::IS_ARRAY,
-                'Attributes to clean (separated by space)'
+                'Attributes to clean options (separated by space)'
             )
         ;
 
-        $this->setName('cyberpunkspike:clean:attributes')
-            ->setDescription('Remove Unused Attribute Values');
+        $this->setName('cyberpunkspike:clean:attribute-options')
+            ->setDescription('Remove Unused Attribute Options');
 
         parent::configure();
     }
