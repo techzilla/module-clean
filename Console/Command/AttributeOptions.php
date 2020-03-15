@@ -142,16 +142,15 @@ class AttributeOptions extends Command
             try {
                 $attribute = $this->getAttribute($attribute_code);
             } catch (NoSuchEntityException $e) {
-                $output->writeln($attribute_code . ': not found');
+                $output->writeln('attribute '. $attribute_code . ', not found');
                 continue;
             }
 
             $allOptions = $this->getAllOptions($attribute);
             $usedOptions = $this->getUsedOptions($attribute);
             $unusedOptions = array_diff($allOptions, $usedOptions);
-            $output->writeln($unusedOptions);
 
-            $option_text[] = '';
+            $option_text = [];
             foreach ($unusedOptions as $option) {
                 try {
                     if ($this->attributeOptionManagement->delete($attribute->getEntityTypeId(), $attribute->getAttributeCode(), $attribute->getSource()->getOptionId($option))) {
@@ -162,14 +161,10 @@ class AttributeOptions extends Command
                 } catch (StateException $e) {
                 }
             }
-            if (empty($option_text[0])) {
-                $output_text = 'values deleted (0):';
-            } else {
-                $output_text = 'values deleted ('.count($option_text).'): '.implode(', ', $option_text);
-            }
+            $output_text = 'values deleted ('.count($option_text).'): '.implode(', ', $option_text);
 
 
-            $output->writeln('attribute '.$attribute_code . ', '.$output_text );
+            $output->writeln('attribute '. $attribute_code . ', '.$output_text );
         }
 
     }
